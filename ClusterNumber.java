@@ -28,7 +28,7 @@ public class ClusterNumber {
 	double Knudsen1      = 0.0 ;
 	double Knudsen2      = 100.0 ;
 	double dtemp         = 0.0;
-	double FinalPorosity = 0.85;
+	double FinalPorosity = 0.45;
 	dtemp = (FinalPorosity*100.0); 
 	itemp = (int)Math.round(dtemp); //四捨五入
 	int iPattern     = seed*1000000 + 11600 + itemp;
@@ -40,7 +40,7 @@ public class ClusterNumber {
 
 	int FillN[][] = new int[iCellNumber1][iCellNumber2];
 	int FillC[][] = new int[iCellNumber1][iCellNumber2];
-	int maxNum = iCellNumber1*iCellNumber2+1;
+	int maxNum = (iCellNumber1+1)*(iCellNumber2+1);
 	int iincx[] = new int[maxNum];
 	int iincy[] = new int[maxNum];
 
@@ -89,6 +89,7 @@ public class ClusterNumber {
 	    System.out.println(e) ;
 	}
 
+	// クラスターの大きさを計算
 	for(incx=0 ; incx<iCellNumber1 ; incx++){
 		for(incy=0 ; incy<iCellNumber2 ; incy++){
 
@@ -102,14 +103,13 @@ public class ClusterNumber {
 			    iincx[Number] = incx;
 			    iincy[Number] = incy;			    
 			
-
-			    // 無限ループ
-			    for(BufNumber=1 ; BufNumber<maxNum-1 ; BufNumber++){
+			    // 一つのクラスターのループ
+			    for(BufNumber=1 ; BufNumber<(maxNum-1) ; BufNumber++){
 
 			    	if(iincy[BufNumber] == 0){
 			    	    iincyM = iCellNumber2 - 1;
 			    	}else{
-			    	    iincyM = iincy[BufNumber] + 1;
+			    	    iincyM = iincy[BufNumber] - 1;
 			    	}
 
 			    	if(iincy[BufNumber] == iCellNumber2-1){
@@ -167,11 +167,11 @@ public class ClusterNumber {
 			    	    }
 			    	}
 
-			    	if(iincx[BufNumber+1]==-1){
+			    	if(iincx[BufNumber+1]<0){
 			    	    break;
 			    	}
 
-			    }// 無限ループ
+			    }// 一つのクラスターのループ
 
 			}
 		    }// １つのクラスターの処理
@@ -180,7 +180,7 @@ public class ClusterNumber {
 		    
 		    for(int i=0 ; i<maxNum ; i++){
 			iincx[i] = -1;
-			iincy[i] = 1;
+			iincy[i] = -1;
 		    }
 		    
 		}
@@ -200,19 +200,20 @@ public class ClusterNumber {
 	    //多孔質配置のデータファイル作成
 	    for(incx=0 ; incx<iCellNumber1 ; incx++){
 		for(incy=0 ; incy<iCellNumber2 ; incy++){
-		    pw1.printf("%8d", incx) ;
-		    pw1.printf("%8d", incy) ;
-		    pw1.printf("%16f %n", Knudsen[incx][incy]) ;			
+		    pw1.printf("%8d", incx);
+		    pw1.printf("%8d", incy);
+		    pw1.printf("%8d", FillC[incx][incy]);
+		    pw1.printf("%8d %n", FillN[incx][incy]);	
 		}
 		pw1.printf("%8s %n", "  ") ;
 	    }
 
 	    //gnuplot作成ファイルの作成
-	    pw3.printf("set terminal eps %n") ;
+	    pw3.printf("set terminal png %n") ;
 	    pw3.printf("set pm3d map %n") ;
 	    pw3.printf("set pm3d corners2color c2 %n") ;
 	    pw3.printf("set size ratio 1 %n") ;
-	    pw3.printf("set output '"+iPattern+".eps' %n") ;
+	    pw3.printf("set output '"+iPattern+".png' %n") ;
 	    pw3.printf("unset colorbox %n") ;
 	    pw3.printf("set palette rgbformulae 22,13,-31 %n") ;
 	    pw3.printf("set xrange [0:31] %n") ;
