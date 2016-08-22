@@ -1,14 +1,12 @@
-/*--- 最新版 2016.8.8 ---*/
+/*--- 最新版 2016.8.20 ---*/
 /*
-すでにある多孔質の物体配置ファイルから，物体部分を減らしていって新しい多孔質配置を作るプログラム
+多孔質物体のクラスターの大きさを計算するプログラム
 /*
 (--- 読み取りファイル ---)
-KnudsenConf(Rho1_"+rho1+"0,Tau1_"+tau1+"0,pt "+iPattern1+").dat
-iPattern1で読み取る多孔質配置のパターンを選択
+KnudsenData().dat
 
 (--- 出力ファイル ---)
-Parameter().dat ... メイン計算に必要なパラメータを記述したファイル
-KnudsenData().dat ... 多孔質の配置を決めるファイル
+test.dat
 porous_conf.gp ... gnuplotで多孔質の配置図を確認するためのファイル
 
 */
@@ -43,7 +41,9 @@ public class ClusterNumber {
 	int maxNum = (iCellNumber1+1)*(iCellNumber2+1);
 	int iincx[] = new int[maxNum];
 	int iincy[] = new int[maxNum];
-
+	int ClusterSize[] = new int[maxNum];
+	int Size[] = new int[maxNum];
+	
 	int Number = 0;
 	int Cluster = 0;
 	int BufNumber = 1;
@@ -60,6 +60,8 @@ public class ClusterNumber {
 	for(int i=0 ; i<maxNum ; i++){
 	    iincx[i] = -1;
 	    iincy[i] = -1;
+	    ClusterSize[i] = 0;
+	    Size[i] = 0;
 	}
 
 	/*--- ファイルの読み取り ---*/
@@ -171,8 +173,8 @@ public class ClusterNumber {
 			    	    break;
 			    	}
 
-			    }// 一つのクラスターのループ
-
+			    }// 一つのクラスターのforループ
+			    ClusterSize[Cluster] = Number;
 			}
 		    }// １つのクラスターの処理
 
@@ -186,16 +188,24 @@ public class ClusterNumber {
 		}
 	}
 
+	for(int i=1 ; i<Cluster ; i++){
+
+	    Size[ClusterSize[i]] = Size[ClusterSize[i]] + 1;
+			
+	}
+
 
 	/*--- ファイルへの書き込み ---*/
 	try{
-	    File file1 = new File("test.dat") ;
-	    
-	    File file3 = new File("porous_conf.gp") ;
+	    File file1 = new File("test.dat");
+	    File file2 = new File("test2.dat");
+	    File file3 = new File("porous_conf.gp");
+	    File file4 = new File("test3.dat");
 
-	    PrintWriter pw1 = new PrintWriter(new BufferedWriter(new FileWriter(file1))) ;
-	    
-	    PrintWriter pw3 = new PrintWriter(new BufferedWriter(new FileWriter(file3))) ;
+	    PrintWriter pw1 = new PrintWriter(new BufferedWriter(new FileWriter(file1)));
+	    PrintWriter pw2 = new PrintWriter(new BufferedWriter(new FileWriter(file2)));
+	    PrintWriter pw3 = new PrintWriter(new BufferedWriter(new FileWriter(file3)));
+	    PrintWriter pw4 = new PrintWriter(new BufferedWriter(new FileWriter(file4)));
 
 	    //多孔質配置のデータファイル作成
 	    for(incx=0 ; incx<iCellNumber1 ; incx++){
@@ -206,6 +216,18 @@ public class ClusterNumber {
 		    pw1.printf("%8d %n", FillN[incx][incy]);	
 		}
 		pw1.printf("%8s %n", "  ") ;
+	    }
+
+	    // クラスターの大きさ
+	    for(int i=1 ; i<Cluster ; i++){
+		pw2.printf("%8d", i);
+		pw2.printf("%8d %n", ClusterSize[i]);	
+	    }
+
+	    // クラスターの大きさ
+	    for(int i=1 ; i<500 ; i++){
+		pw4.printf("%8d", i);
+		pw4.printf("%8d %n", Size[i]);	
 	    }
 
 	    //gnuplot作成ファイルの作成
@@ -224,8 +246,10 @@ public class ClusterNumber {
 	    pw3.printf("unset output %n") ;
 	    pw3.printf("reset %n") ;
 
-	    pw1.close() ;
-	    pw3.close() ;
+	    pw1.close();
+	    pw2.close();
+	    pw3.close();
+	    pw4.close();
 
 	}catch(IOException e){
 	    System.out.println(e) ;
