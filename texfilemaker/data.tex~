@@ -1,0 +1,235 @@
+\documentclass[10pt]{jsarticle} 
+\usepackage{amsmath,amssymb} 
+\usepackage[dvips]{graphicx} 
+\usepackage{overpic} 
+\usepackage{bm} 
+\usepackage{fancyhdr} 
+\usepackage{cases} 
+\pagestyle{fancy} 
+\lhead{笠原史禎} 
+\chead{} 
+\rhead{\today} 
+\numberwithin{equation}{section} 
+\newcommand{\del}{\partial} 
+\begin{document} 
+\begin{figure}[t] 
+\begin{center}    
+\vspace{-3.5cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011647/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.47168$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011674/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.7421879999999998$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011669/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.691406$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011672/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.720703$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\caption{\large $\hat{p}_0=1,\hat{p}_1=0.0$，物体サイズ$d=l_1/16$} 
+\label{fig:profile3} 
+\end{center} 
+\vspace{-10mm} 
+\end{figure} 
+\begin{figure}[t] 
+\begin{center}    
+\vspace{-3.5cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011667/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.671875$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011673/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.730469$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011657/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.570313$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011656/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.560547$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\caption{\large $\hat{p}_0=1,\hat{p}_1=0.0$，物体サイズ$d=l_1/16$} 
+\label{fig:profile3} 
+\end{center} 
+\vspace{-10mm} 
+\end{figure} 
+\begin{figure}[t] 
+\begin{center}    
+\vspace{-3.5cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011668/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.680664$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011663/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.630859$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011661/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.610352$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011658/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.580078$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\caption{\large $\hat{p}_0=1,\hat{p}_1=0.0$，物体サイズ$d=l_1/16$} 
+\label{fig:profile3} 
+\end{center} 
+\vspace{-10mm} 
+\end{figure} 
+\begin{figure}[t] 
+\begin{center}    
+\vspace{-3.5cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011664/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.640625$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011646/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.460938$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011666/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.660156$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011659/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.591797$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\caption{\large $\hat{p}_0=1,\hat{p}_1=0.0$，物体サイズ$d=l_1/16$} 
+\label{fig:profile3} 
+\end{center} 
+\vspace{-10mm} 
+\end{figure} 
+\begin{figure}[t] 
+\begin{center}    
+\vspace{-3.5cm} 
+\begin{tabular}{cc} 
+\hspace{-9cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011671/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.710938$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\begin{minipage}{1.0\textwidth}   
+\begin{overpic}[width=1.0\hsize]{/home/kasahara/study/scatterer/random/8.10/2011662/vecmap.eps}   
+\put(44,2){\large (1)$\epsilon = 0.62207$} 
+\end{overpic}       
+\vspace{6mm}       
+\end{minipage}  
+\hspace{-8cm} 
+\vspace{-2cm} 
+\end{tabular} 
+\vspace{-2cm} 
+\caption{\large $\hat{p}_0=1,\hat{p}_1=0.0$，物体サイズ$d=l_1/16$} 
+\label{fig:profile3} 
+\end{center} 
+\vspace{-10mm} 
+\end{figure} 
+\end{document} 
